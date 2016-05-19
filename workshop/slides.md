@@ -52,7 +52,7 @@ TODO: Expand on Ionic 2, and some of the features
 ---
 layout: false
 
-## Ionic Setup
+### Ionic Setup
 
 * Install Ionic 2
 
@@ -99,7 +99,7 @@ TODO: Expand on what CodePush is, and some of the features
 ---
 template: false
 
-## CodePush Setup
+### CodePush Setup
 
 * Install CLI tools
 
@@ -129,7 +129,7 @@ Setting up CodePush is fairly straight forward, all you need to do is install th
 
 ---
 
-## Configuring Cordova for CodePush
+### Configuring Cordova for CodePush
 
 * Install CodePush plugin
 
@@ -165,7 +165,7 @@ code-push deployment ls AppName -k
 
 ---
 
-## Configuring Cordova for CodePush
+### Configuring Cordova for CodePush
 
 * Let Cordova talk with CodePush
 
@@ -332,7 +332,7 @@ template: inverse
 
 template: false
 
-## Build & Deploy
+### Build & Deploy
 
 * Build
 
@@ -389,7 +389,7 @@ export class Page1 {
 ---
 
 
-## Sync the Update
+### Sync the Update
 
 * Build & Release CodePush
 
@@ -413,7 +413,7 @@ For this part of the workshop though, we will tell the plugin to notify the user
 Once you have built and released the application, instead of running 'ionic emulate', do an ionic build and release with CodePush. You will now be able to go into your application and check for updates, then hit sync.
 
 ---
-
+template: inverse
 
 # Deployments
 
@@ -424,7 +424,9 @@ So far, we have just been pushing things into Staging, however CodePush allows y
 Lets start making some changes to our application be able to switch between a Production and a Staging deployment.
 
 ---
+template: false
 
+### Select a Version
 __*app/pages/page1/page1.html*__
 ```html
 <!-- ... -->
@@ -449,6 +451,8 @@ __*app/pages/page1/page1.html*__
 
 ---
 
+### Pass the Deployment Key
+
 __*app/pages/page1/page1.html*__
 ```html
 <!-- ... -->
@@ -466,6 +470,8 @@ __*app/pages/page1/page1.html*__
 ```
 
 ---
+
+### Update Sync
 
 __*app/pages/page1/page1.ts*__
 
@@ -485,6 +491,7 @@ sync(key) {
 
 ---
 
+### Update checkForUpdate
 __*app/pages/page1/page1.ts*__
 
 ```js
@@ -574,7 +581,7 @@ template: inverse
 
 template: false
 
-## Deploy
+### Deploy
 
 ```shell
 ionic build
@@ -589,7 +596,7 @@ Lets push this change to Staging, and view it in our application.
 
 --
 
-## Promote
+### Promote
 
 ```shell
 code-push promote pgdays-demo \
@@ -599,7 +606,7 @@ code-push promote pgdays-demo \
 
 --
 
-## Run the app ...
+### Run the app ...
 
 ???
 
@@ -847,7 +854,7 @@ class: middle
 ???
 
 TODO: Steps / Slides about promoting / viewing changes / etc?
-Or - move this stuff above 'Deployments' 
+Or - move this stuff above 'Deployments'
 ---
 template: inverse
 
