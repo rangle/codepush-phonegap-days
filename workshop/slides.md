@@ -257,9 +257,9 @@ template: false
 
 __*app/pages/page1/page1.ts*__
 
-```js
+```ts
 // ...
-export class Page 1 {
+export class Page1 {
   // ...
   isUpdateAvailable:boolean = false;
   constructor(private appRef: ApplicationRef) { }
@@ -291,7 +291,7 @@ template: false
 
 ### codePush.sync
 .code-header[__*app/pages/page1/page1.ts*__]
-```js
+```ts
 // ...
 export class Page1 {
 // ...
@@ -368,7 +368,7 @@ __*app/pages/page1/page1.html*__
 class: middle
 
 .code-header[__*app/pages/page1/page1.ts*__]
-```js
+```ts
 export class Page1 {
   status: string = '';
   isProcessing: boolean = false;
@@ -475,7 +475,7 @@ __*app/pages/page1/page1.html*__
 
 __*app/pages/page1/page1.ts*__
 
-```js
+```ts
 export class Page1 {
 // ...
 
@@ -494,7 +494,7 @@ sync(key) {
 ### Update checkForUpdate
 __*app/pages/page1/page1.ts*__
 
-```js
+```ts
 export class Page1 {
 // ...
 
@@ -552,7 +552,7 @@ __*app/pages/page1/page1.html*__
 ---
 
 __*app/pages/page1/page1.ts*__
-```js
+```ts
 export class Page1 {
   // ...
 
@@ -687,14 +687,14 @@ So far, we have been leaving the callbacks for sync empty, lets take a closer lo
 ---
 template: false
 
-```js
+```ts
 codePush.sync(
 *  syncCallback?: SuccessCallback<SyncStatus>,
   syncOptions?: SyncOptions,
   downloadProgress?: SuccessCallback<DownloadProgress>): void;
 ```
 
-```js
+```ts
 declare enum SyncStatus {
     UP_TO_DATE,   
     UPDATE_INSTALLED,
@@ -713,9 +713,9 @@ class: middle
 
 __*app/pages/page1/page1.ts*__
 
-```js
+```ts
 // ...
-export class Page 1 {
+export class Page1 {
 
 syncHandler(status: SyncStatus) {
   // ...
@@ -733,7 +733,7 @@ sync(key) {
 
 class: middle
 
-```js
+```ts
 syncHandler(status: SyncStatus) {
     switch (status) {
       case SyncStatus.UP_TO_DATE:
@@ -755,7 +755,7 @@ syncHandler(status: SyncStatus) {
 ---
 class: middle
 
-```js
+```ts
 syncHandler(status: SyncStatus) {
   switch(status) {
     // ...
@@ -792,7 +792,7 @@ template: inverse
 template: false
 
 
-```js
+```ts
 codePush.sync(
   syncCallback?: SuccessCallback<SyncStatus>,
   syncOptions?: SyncOptions,
@@ -800,7 +800,7 @@ codePush.sync(
 ```
 --
 
-```js
+```ts
 /**
  * Defines the format of the DownloadProgress object,
  * used to send periodical update notifications on the progress
@@ -815,7 +815,7 @@ interface DownloadProgress {
 ---
 class: middle
 
-```js
+```ts
 // ...
 export class Page1 {
   downloadProgress: DownloadProgress
