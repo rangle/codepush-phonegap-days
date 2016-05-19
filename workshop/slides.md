@@ -13,16 +13,17 @@ Hello, thank you for taking the time to join us today. Over the next hour we wil
 layout: false
 
 
-# Agenda
+## Agenda
 
 * Review Prerequisites
 * Ionic 2
 * CodePush
 * CodePushify Your App
-* Review of Demo application
-* Deploy to Staging and Sync
-* Deployment to Production
+* Create a Sync Tab
+* Deploying to Staging
+* Selecting Deployments
 * Synching Multiple Versions
+* Detailed Sync & Download Progress
 * Q & A
 
 
@@ -52,7 +53,7 @@ TODO: Expand on Ionic 2, and some of the features
 ---
 layout: false
 
-### Ionic Setup
+### Ionic 2
 
 * Install Ionic 2
 
@@ -68,14 +69,15 @@ npm install -g ionic@beta
 npm install -g cordova
 ```
 
---
+---
+
+### Ionic 2
 
 * Start a new Ionic Project
 
 ```shell
-ionic start pgdays-workship tutorial --v2 --ts
+ionic start pgdays-workshop --v2 --ts
 cd pgdays-workshop
-ionic serve
 ```
 
 ???
@@ -86,6 +88,13 @@ Before we move onto CodePush, lets take a second to get the project up and runni
 
 Once everyone has this step working, we will move onto hooking CodePush into our application.
 
+--
+
+* Preview in browser
+
+```shell
+ionic serve
+```
 ---
 background-image: url('fbshare.png')
 template: inverse
@@ -134,10 +143,23 @@ Setting up CodePush is fairly straight forward, all you need to do is install th
 * Install CodePush plugin
 
 ```shell
-cordova plugin add cordova-plugin-code-push@latest
+ionic plugin add cordova-plugin-code-push@latest
 ```
 
 --
+
+* Install Typings
+
+```shell
+typings install \
+github:Microsoft/cordova-plugin-code-push/typings/codePush.d.ts \
+--save --ambient
+```
+
+
+---
+
+### Configuring Cordova for CodePush
 
 * Add Deployment Key to config.xml
 
@@ -160,8 +182,6 @@ gHde0lsEJekgm946zOruuErzJUQr4JJvnXkxW
 code-push app ls # list your registered apps
 code-push deployment ls AppName -k
 ```
-
---
 
 ---
 
@@ -252,13 +272,16 @@ template: inverse
 ---
 
 template: false
-
 ### codePush.checkForUpdates
 
 __*app/pages/page1/page1.ts*__
 
 ```ts
-// ...
+
+import {Page} from 'ionic-angular';
+import {ApplicationRef} from '@angular/core'
+declare const codePush: CodePushCordovaPlugin;
+
 export class Page1 {
   // ...
   isUpdateAvailable:boolean = false;
@@ -280,6 +303,7 @@ Here we are just hooking up the event handlers. Since codePush is running outsid
 
 The result object will contain details of an update if one is available, if the result is null - it means that the
 the application is up to date. We will look into the details of the result object later on in more detail.
+
 ---
 template: inverse
 
@@ -315,7 +339,7 @@ template: inverse
 # Running the App
 
 ```shell
-ionic emulate ios
+ionic emulate --target="iPhone-6s"
 ```
 
 ???
@@ -358,7 +382,7 @@ __*app/pages/page1/page1.html*__
 <ion-content padding class="page1">
   <ion-row>
      <ion-col width-20>Status:</ion-col>
-     <ion col width-80>{{status}}</ion-col>
+     <ion-col width-80>{{status}}</ion-col>
   </ion-row>
 <!-- ... -->
 </ion-content>
@@ -552,15 +576,23 @@ __*app/pages/page1/page1.html*__
 ---
 
 __*app/pages/page1/page1.ts*__
+
 ```ts
+import {Page, Platform} from 'ionic-angular';
+// ...
 export class Page1 {
   // ...
 
-  currentPackage: ILocalPackage
+  currentPackage: ILocalPackage;
+  constructor(private platform: Platform,
+              private appRef: ApplicationRef) { }
 
   ngOnInit() {
-    this.getCurrentPackage();
-  }  
+    this.platform
+      .ready()
+      .then( () => this.getCurrentPackage());
+  }
+
   getCurrentPackage() {
     codePush.getCurrentPackage((result: ILocalPackage) => {
       this.currentPackage = result;  
@@ -794,18 +826,18 @@ template: false
 
 ```ts
 codePush.sync(
-  syncCallback?: SuccessCallback<SyncStatus>,
-  syncOptions?: SyncOptions,
-* downloadProgress?: SuccessCallback<DownloadProgress>): void;
+   syncCallback?: SuccessCallback<SyncStatus>,
+   syncOptions?: SyncOptions,
+*  downloadProgress?: SuccessCallback<DownloadProgress>): void;
 ```
 --
 
 ```ts
-/**
- * Defines the format of the DownloadProgress object,
- * used to send periodical update notifications on the progress
- * of the update download.
- **/
+
+// Defines the format of the DownloadProgress object,
+// used to send periodical update notifications on the progress
+// of the update download.
+
 interface DownloadProgress {
     totalBytes: number;
     receivedBytes: number;
@@ -847,8 +879,8 @@ class: middle
   <ion-col width-25>Progress:</ion-col>
   <ion-col width-75>
       {{downloadProgress?.receivedBytes}} / {{downloadProgress?.totalBytes}}
-    </ion-col>
-  </ion-row>
+  </ion-col>
+</ion-row>
 ```
 
 ???
