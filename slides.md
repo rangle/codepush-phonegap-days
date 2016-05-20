@@ -69,7 +69,7 @@ For this session, you will need to have node, git and xcode installed and setup.
 
 * Slide Repo: https://github.com/rangle/codepush-phonegap-days
 * Demo Repo: https://github.com/rangle/pgdays-codepush-demo
-* Gist with Code: http://bit.ly/1WFEOPi
+* Gist with Code: http://bit.ly/22hPKC4
 
 ---
 
