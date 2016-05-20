@@ -10,12 +10,34 @@ Hello, thank you for taking the time to join us today. Over the next hour we wil
 
 
 ---
+
+layout: false
+
+# Hello, etc...
+
+.left-c[
+## Bertrand Karerangabo
+
+* twitter: [@codenarian](https://twitter.com/codenarian)
+* github: [bertrandk](https://github.com/bertrandk)
+
+]
+.right-c[
+## Evan Schultz
+
+* twitter: [@e_p82](https://twitter.com/e_p82)
+* github: [e-schultz](https://github.com/e-schultz)
+
+]
+
+---
 layout: false
 
 
 ## Agenda
 
 * Review Prerequisites
+* Resources
 * Ionic 2
 * CodePush
 * CodePushify Your App
@@ -43,6 +65,14 @@ For this session, you will need to have node, git and xcode installed and setup.
 
 ---
 
+## Resources:
+
+* Slide Repo: https://github.com/rangle/codepush-phonegap-days
+* Demo Repo: https://github.com/rangle/pgdays-codepush-demo
+* Gist with Code: http://bit.ly/1WFEOPi
+
+---
+
 background-image: url('ionic2.jpg')
 
 
@@ -50,13 +80,6 @@ background-image: url('ionic2.jpg')
 
 TODO: Expand on Ionic 2, and some of the features
 
----
-
-## Resources:
-
-* Slide Repo: https://github.com/rangle/codepush-phonegap-days
-* Demo Repo: https://github.com/rangle/pgdays-codepush-demo
-* Gist with Code: http://bit.ly/1WFEOPi
 
 ---
 layout: false
@@ -897,12 +920,28 @@ class: middle
 
 TODO: Steps / Slides about promoting / viewing changes / etc?
 Or - move this stuff above 'Deployments'
----
-template: inverse
-
-# Thanks
 
 ---
 template: inverse
 
 # Any Questions?
+
+---
+template: inverse
+
+# Thanks
+
+.left-c[
+## Bertrand Karerangabo
+
+* twitter: [@codenarian](https://twitter.com/codenarian)
+* github: [bertrandk](https://github.com/bertrandk)
+
+]
+.right-c[
+## Evan Schultz
+
+* twitter: [@e_p82](https://twitter.com/e_p82)
+* github: [e-schultz](https://github.com/e-schultz)
+
+]
