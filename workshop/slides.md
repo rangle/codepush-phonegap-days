@@ -51,6 +51,14 @@ background-image: url('ionic2.jpg')
 TODO: Expand on Ionic 2, and some of the features
 
 ---
+
+## Resources:
+
+* Slide Repo: https://github.com/rangle/codepush-phonegap-days
+* Demo Repo: https://github.com/rangle/pgdays-codepush-demo
+* Gist with Code: http://bit.ly/1WFEOPi
+
+---
 layout: false
 
 ### Ionic 2
@@ -399,12 +407,13 @@ export class Page1 {
   isProcessing: boolean = false;
   // ..
   checkForUpdate() {
-  this.isProcessing = true;
-  codePush.checkForUpdate((result) => {
-    this.isUpdateAvailable = result !== null;
-    this.status = result === null ? 'Up to Date' : 'Update Available'
-    this.isProcessing = false;
-    this.appRef.tick();
+    this.isProcessing = true;
+    this.status = 'Checking ... '
+    codePush.checkForUpdate((result) => {
+      this.isUpdateAvailable = result !== null;
+      this.status = result === null ? 'Up to Date' : 'Update Available'
+      this.isProcessing = false;
+      this.appRef.tick();
     });
   }
   // ...
