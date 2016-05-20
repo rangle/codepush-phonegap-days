@@ -89,7 +89,6 @@ background-image: url('ionic2.jpg')
 
 .foot-right[
 [Ionic 2 Framework](http://ionicframework.com/docs/v2/)
-
 ]
 
 ???
