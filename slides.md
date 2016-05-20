@@ -4,6 +4,12 @@ class: center, middle, inverse
 ---
 # Hot Updates using CodePush and Ionic 2
 
+.right[
+  .subhead[
+  [hot push across the dev lifecycle]
+  ]
+]
+
 ???
 
 Hello, thank you for taking the time to join us today. Over the next hour we will be covering how to use Microsoft's CodePush services with a Cordova app to deploy updates directly to users devices. Before getting started, I'll go over some of the Prerequisites for being able to follow along. Hopefully you should have done this prior to todays session.
@@ -16,19 +22,24 @@ layout: false
 # Hello, etc...
 
 .left-c[
-## Bertrand Karerangabo
-
-* twitter: [@codenarian](https://twitter.com/codenarian)
-* github: [bertrandk](https://github.com/bertrandk)
-
-]
-.right-c[
 ## Evan Schultz
 
 * twitter: [@e_p82](https://twitter.com/e_p82)
 * github: [e-schultz](https://github.com/e-schultz)
 
 ]
+
+--
+
+.right-c[
+
+## Bertrand Karerangabo
+
+* twitter: [@codenarian](https://twitter.com/codenarian)
+* github: [bertrandk](https://github.com/bertrandk)
+
+]
+
 
 ---
 layout: false
@@ -51,7 +62,7 @@ layout: false
 
 ---
 
-# Prerequisites
+## Prerequisites
 
 * node
 * git
@@ -75,6 +86,11 @@ For this session, you will need to have node, git and xcode installed and setup.
 
 background-image: url('ionic2.jpg')
 
+
+.foot-right[
+[Ionic 2 Framework](http://ionicframework.com/docs/v2/)
+
+]
 
 ???
 
@@ -131,6 +147,12 @@ background-image: url('fbshare.png')
 template: inverse
 
 # Code Push
+
+
+.foot-right[
+[Microsoft CodePush](https://microsoft.github.io/code-push/)
+
+]
 
 ???
 
