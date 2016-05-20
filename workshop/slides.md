@@ -151,6 +151,7 @@ ionic plugin add cordova-plugin-code-push@latest
 * Install Typings
 
 ```shell
+npm i typings@0.x -g
 typings install \
 github:Microsoft/cordova-plugin-code-push/typings/codePush.d.ts \
 --save --ambient
@@ -503,7 +504,7 @@ __*app/pages/page1/page1.ts*__
 export class Page1 {
 // ...
 
-sync(key) {
+* sync(key) {
   codePush.sync(null,
     { updateDialog: true,
       installMode: InstallMode.IMMEDIATE,
@@ -522,7 +523,7 @@ __*app/pages/page1/page1.ts*__
 export class Page1 {
 // ...
 
-checkForUpdate(key) {
+* checkForUpdate(key) {
     this.isInProgress = true;
     this.status = 'Checking for Update';
     codePush.checkForUpdate((result) => {
