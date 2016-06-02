@@ -20,3 +20,14 @@ live-server .
 ## Code Snippit Gist
 
 * [Code](http://bit.ly/22hPKC4)
+
+
+## Authors
+
+* Evan Schultz
+  * GitHub: [e-schultz](https://github.com/e-schultz)
+  * Twitter [@e_p82](https://twitter.com/e_p82)
+* Bertrand Karerangabo
+ * GitHub: [bertrandk](https://github.com/bertrandk)
+ * Twitter: [@codenarian]([@codenarian](https://twitter.com/codenarian)
+
