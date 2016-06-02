@@ -29,5 +29,5 @@ live-server .
   * Twitter [@e_p82](https://twitter.com/e_p82)
 * Bertrand Karerangabo
  * GitHub: [bertrandk](https://github.com/bertrandk)
- * Twitter: [@codenarian]([@codenarian](https://twitter.com/codenarian)
+ * Twitter: [@codenarian](https://twitter.com/codenarian)
 
