@@ -9,6 +9,10 @@ npm install -g live-server
 live-server .
 ```
 
+## View Slides Online
+
+[SlideShare](http://www.slideshare.net/EvanSchultz1/hotpush-with-ionic-2-and-codepush-62592337)
+
 ## Demo Repo
 
 * [pgdays-codepush-demo](https://github.com/rangle/pgdays-codepush-demo)
